@@ -36,20 +36,14 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ article }) => {
     }
   }
 
-  // Define um timeout para lidar com casos em que o iframe não carrega (ex: problemas de rede)
   useEffect(() => {
     setPlayerState('loading');
-
     const timer = setTimeout(() => {
-      // Se o player ainda estiver 'carregando' após o timeout, muda para 'erro'
       setPlayerState(prevState => (prevState === 'loading' ? 'error' : prevState));
     }, 10000); // Timeout de 10 segundos
-
     return () => clearTimeout(timer);
-    // FIX: The 'Article' type does not have an 'id' property. Changed to 'slug' which is the unique identifier.
-  }, [article.slug]); // Reexecuta o efeito se o ID do artigo mudar
+  }, [article.slug]);
 
-  // Trunca o resumo para evitar que textos longos quebrem o layout.
   const truncatedSummary = article.summary.length > 180
     ? article.summary.substring(0, 180) + '...'
     : article.summary;
@@ -69,7 +63,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ article }) => {
           {playerState === 'error' && (
             <div className="p-4">
               <ErrorIcon />
-              <p className="text-sm font-semibold text-white mb-3">Player indisponível no momento.</p>
+              <p className="text-sm font-semibold text-white mb-3">Player indisponível.</p>
               <a
                 href={article.audioUrl}
                 target="_blank"
@@ -103,7 +97,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ article }) => {
       ) : (
         <audio controls className="w-full">
           <source src={article.audioUrl} type="audio/mpeg" />
-          Your browser does not support the audio element.
+          Seu navegador não suporta o elemento de áudio.
         </audio>
       )}
     </div>

@@ -21,13 +21,7 @@ const AdPlaceholder: React.FC<AdPlaceholderProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Adiciona um pequeno atraso para garantir que o contêiner do anúncio
-    // esteja visível e com as dimensões calculadas pelo navegador antes de
-    // solicitar o anúncio. Isso corrige o erro "availableWidth=0" que
-    // pode ocorrer em SPAs (Single Page Applications) quando o script do
-    // AdSense é executado antes da finalização do layout.
     const timer = setTimeout(() => {
-      // A verificação `offsetParent !== null` é uma forma eficaz de saber se o elemento está visível no DOM.
       if (containerRef.current && containerRef.current.offsetParent !== null) {
         try {
           (window.adsbygoogle = window.adsbygoogle || []).push({});
@@ -35,18 +29,17 @@ const AdPlaceholder: React.FC<AdPlaceholderProps> = ({
           console.error("Erro ao carregar o anúncio do AdSense:", err);
         }
       }
-    }, 100); // Um atraso de 100ms é geralmente suficiente.
+    }, 100);
 
     return () => clearTimeout(timer);
   }, [slot]);
 
   return (
-    // Um contêiner para o anúncio. O AdSense ajustará o tamanho.
     <div
       ref={containerRef}
       className="w-full flex flex-col items-center justify-center bg-gray-800/50 rounded-lg text-center my-4 overflow-hidden"
       style={{ minHeight: '280px' }}
-      key={slot} // Adiciona a key para forçar a remontagem se o slot mudar, garantindo um estado limpo.
+      key={slot}
     >
       <ins
         className="adsbygoogle"

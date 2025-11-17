@@ -10,10 +10,11 @@ interface CategoryPageProps {
 const CategoryPage: React.FC<CategoryPageProps> = ({ category }) => {
     const { articles } = useAppContext();
     const categoryArticles = articles.filter(a => a.category === category);
+    const topic = categoryArticles.length > 0 ? categoryArticles[0].topic : 'sport';
     
     return (
         <div className="animate-fade-in">
-            <SectionTitle>{category}</SectionTitle>
+            <SectionTitle topic={topic}>{category}</SectionTitle>
 
             {categoryArticles.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">

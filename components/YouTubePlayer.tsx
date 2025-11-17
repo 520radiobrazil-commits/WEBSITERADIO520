@@ -8,7 +8,6 @@ const YouTubeIcon = () => (
 );
 
 const YouTubePlayer: React.FC = () => {
-    // Extracted from: https://youtube.com/shorts/7uYjwiAA2AE?si=x6TZh9Upuz2FPyDh
     const videoId = '7uYjwiAA2AE';
     const embedUrl = `https://www.youtube.com/embed/${videoId}`;
 
@@ -18,13 +17,6 @@ const YouTubePlayer: React.FC = () => {
                 <YouTubeIcon />
                 RADIO520 NO YOUTUBE
             </h3>
-            {/* 
-              Para corrigir o "Erro 153" do YouTube, que é um erro de configuração do player,
-              alteramos a proporção do contêiner para corresponder ao formato vertical
-              de um YouTube Short (9:16). Isso garante que o player tenha as dimensões corretas
-              para renderizar o vídeo, resolvendo o conflito de configuração.
-              O cálculo para padding-bottom é (altura / largura) * 100 = (16 / 9) * 100 = 177.77%
-            */}
             <div className="relative overflow-hidden rounded-lg w-full max-w-xs mx-auto" style={{ paddingBottom: '177.77%' }}>
                 <iframe
                     className="absolute top-0 left-0 w-full h-full"

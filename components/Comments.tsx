@@ -29,7 +29,7 @@ const Comments: React.FC<CommentsProps> = ({ articleId }) => {
     const newComment: Comment = {
       id: new Date().toISOString(),
       articleId,
-      author: author.trim() || 'Anonymous',
+      author: author.trim() || 'Anônimo',
       text: text.trim(),
       timestamp: new Date().toISOString(),
     };
@@ -88,12 +88,12 @@ const Comments: React.FC<CommentsProps> = ({ articleId }) => {
 
       <div className="space-y-6">
         {comments.length > 0 ? (
-          comments.map((comment) => (
+          comments.slice().reverse().map((comment) => (
             <div key={comment.id} className="p-4 bg-gray-700/50 rounded-md border border-gray-600">
               <div className="flex items-center mb-2">
                 <p className="font-semibold text-teal-300 mr-3">{comment.author}</p>
                 <p className="text-xs text-gray-400">
-                  {new Date(comment.timestamp).toLocaleString()}
+                  {new Date(comment.timestamp).toLocaleString('pt-BR')}
                 </p>
               </div>
               <p className="text-gray-200 whitespace-pre-wrap">{comment.text}</p>

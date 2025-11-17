@@ -6,8 +6,8 @@ import ShareButtons from '../components/ShareButtons';
 import Comments from '../components/Comments';
 import LikeButton from '../components/LikeButton';
 import ArticleCard from '../components/ArticleCard';
-import SectionTitle from '../components/SectionTitle';
 import AdPlaceholder from '../components/AdPlaceholder';
+import AiChat from '../components/AiChat';
 
 interface ArticlePageProps {
   article: Article;
@@ -61,22 +61,6 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ article }) => {
                     <div className="mt-12">
                         <Comments articleId={article.slug} />
                     </div>
-
-                    <div className="mt-12">
-                        <a 
-                            href="mailto:520radiobrazil@gmail.com" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="block rounded-lg overflow-hidden group transition-all duration-300 ease-in-out hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-1"
-                            aria-label="Anuncie na Rádio 520 - Clique para enviar um email"
-                        >
-                            <img 
-                                src="https://public-rf-upload.minhawebradio.net/249695/ad/32dc318f7254d01a058188801d808ff5.png" 
-                                alt="Banner de anúncio da Rádio 520" 
-                                className="w-full h-auto"
-                            />
-                        </a>
-                    </div>
                 </article>
                 
                 <aside className="lg:col-span-4 space-y-8">
@@ -91,6 +75,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ article }) => {
                     )}
                 </aside>
             </div>
+             <AiChat article={article} />
         </div>
     );
 };

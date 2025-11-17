@@ -25,9 +25,6 @@ interface ShareButtonsProps {
 const ShareButtons: React.FC<ShareButtonsProps> = ({ article }) => {
   const [copyStatus, setCopyStatus] = useState('Copiar Link');
   
-  // FIX: This URL was pointing to a non-existent path on a production domain.
-  // Changed to generate a shareable link for the current application using URL parameters.
-  // This allows the app to open directly on the shared article.
   const urlToShare = `${window.location.origin}${window.location.pathname}?article=${article.slug}`;
 
   const encodedUrl = encodeURIComponent(urlToShare);
@@ -54,7 +51,7 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({ article }) => {
 
   return (
     <div className="flex items-center flex-wrap gap-3">
-        <span className="text-sm font-semibold text-gray-300 mr-2">Compartilhe este artigo:</span>
+        <span className="text-sm font-semibold text-gray-300 mr-2">Compartilhe:</span>
         <a href={shareLinks.x} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 bg-gray-700 rounded-full text-gray-300 hover:bg-black hover:text-white transition-colors duration-200" aria-label="Compartilhar no X">
             <XIcon />
         </a>

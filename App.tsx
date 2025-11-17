@@ -45,18 +45,30 @@ function App() {
     setSelectedArticleSlug(articleSlug);
     setView('ARTICLE');
     setSelectedCategory(null);
+    // Update URL
+    const url = new URL(window.location.toString());
+    url.searchParams.set('article', articleSlug);
+    window.history.pushState({}, '', url);
   }, []);
 
   const handleSelectCategory = useCallback((category: string) => {
     setSelectedCategory(category);
     setView('CATEGORY');
     setSelectedArticleSlug(null);
+    // Update URL
+    const url = new URL(window.location.toString());
+    url.searchParams.delete('article');
+    window.history.pushState({}, '', url);
   }, []);
 
   const handleNavigate = useCallback((targetView: View) => {
     setView(targetView);
     setSelectedArticleSlug(null);
     setSelectedCategory(targetView === 'HOME' ? 'HOME' : null);
+     // Update URL
+    const url = new URL(window.location.toString());
+    url.searchParams.delete('article');
+    window.history.pushState({}, '', url);
   }, []);
   
   const contextValue = useMemo(() => ({
