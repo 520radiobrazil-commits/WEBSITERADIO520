@@ -21,11 +21,11 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, size = 'normal' }) =
 
   const categoryColorClass = article.topic === 'sport'
     ? 'bg-gradient-to-r from-teal-500 to-cyan-500 text-gray-900'
-    : 'bg-gradient-to-r from-pink-500 to-fuchsia-500 text-white';
+    : 'bg-gradient-to-r from-amber-500 to-orange-600 text-white';
 
   const hoverShadowClass = article.topic === 'sport'
     ? 'hover:shadow-cyan-500/20'
-    : 'hover:shadow-fuchsia-500/20';
+    : 'hover:shadow-orange-500/20';
 
 
   return (

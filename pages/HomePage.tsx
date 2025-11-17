@@ -9,16 +9,16 @@ import TopHits520 from '../components/FeaturedArticle'; // Reutilizando o compon
 import { Article } from '../types';
 
 // Componente interno para renderizar seções de conteúdo (Esportes ou Música)
-const ContentSection: React.FC<{title: string; articles: Article[]; color: 'cyan' | 'fuchsia'}> = ({ title, articles, color }) => {
+const ContentSection: React.FC<{title: string; articles: Article[]; color: 'cyan' | 'orange'}> = ({ title, articles, color }) => {
     const { handleSelectArticle } = useAppContext();
     if (articles.length === 0) return null;
 
     const featured = articles.find(a => a.isFeatured) || articles[0];
     const others = articles.filter(a => a.slug !== featured.slug).slice(0, 4);
 
-    const borderColor = color === 'cyan' ? 'border-cyan-500' : 'border-fuchsia-500';
-    const hoverShadow = color === 'cyan' ? 'hover:shadow-cyan-500/20' : 'hover:shadow-fuchsia-500/20';
-    const featuredCategoryColor = color === 'cyan' ? 'bg-cyan-500 text-gray-900' : 'bg-fuchsia-500 text-white';
+    const borderColor = color === 'cyan' ? 'border-cyan-500' : 'border-orange-500';
+    const hoverShadow = color === 'cyan' ? 'hover:shadow-cyan-500/20' : 'hover:shadow-orange-500/20';
+    const featuredCategoryColor = color === 'cyan' ? 'bg-cyan-500 text-gray-900' : 'bg-gradient-to-r from-amber-500 to-orange-600 text-white';
 
     return (
         <section className="mb-12">
@@ -76,7 +76,7 @@ const HomePage: React.FC = () => {
                 {/* Área de Conteúdo Principal */}
                 <div className="lg:col-span-2">
                     {sportArticles.length > 0 && <ContentSection title="Esportes" articles={sportArticles} color="cyan" />}
-                    {specialArticles.length > 0 && <ContentSection title="ESPECIAIS" articles={specialArticles} color="fuchsia" />}
+                    {specialArticles.length > 0 && <ContentSection title="ESPECIAIS" articles={specialArticles} color="orange" />}
                 </div>
 
                 {/* Barra Lateral */}

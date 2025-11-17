@@ -80,6 +80,20 @@ export const MOCK_ARTICLES: Article[] = [
 
     // --- ARTIGOS ESPECIAIS ---
     {
+        category: 'SPORTS BUSINESS 520',
+        topic: 'special',
+        title: 'Pai de Neymar compra marca de Pelé por US$ 18 milhões',
+        slug: 'pai-de-neymar-compra-marca-pele',
+        summary: 'Neymar da Silva Santos, pai de Neymar Jr., adquiriu os direitos da marca Pelé por US$ 18 milhões através da NR Sports. O acordo marca um movimento significativo no marketing esportivo global.',
+        content: `<p>O universo do marketing esportivo ganhou um movimento pesado nesta semana. Neymar da Silva Santos, pai do atacante Neymar Jr., desembolsou US$ 18 milhões — algo em torno de R$ 95 milhões na cotação atual — para adquirir os direitos da marca Pelé, pertencente ao Rei do Futebol, falecido em 2022.</p><p>A negociação foi feita por meio da NR Sports, empresa da família Neymar, após tratativas com a norte-americana Sport 10, antiga detentora da marca. Segundo informações reveladas pelo UOL, o acordo foi fechado ainda em novembro.</p><p>O anúncio oficial está marcado para esta quarta-feira (19 de novembro), justamente no aniversário do milésimo gol de Pelé — uma data carregada de simbolismo para o futebol mundial.</p><p>A reportagem também aponta que a transação foi “facilitada” porque a marca Pelé vinha sendo pouco explorada comercialmente nos últimos anos. A NR Sports, que já administra a imagem de Neymar Jr., agora passa a controlar também um dos nomes mais valiosos e icônicos da história do esporte.</p><p>A aquisição levanta questionamentos no mercado: qual será o plano da família Neymar para reposicionar a marca Pelé? Vem rebranding? Licenciamentos globais? Projetos digitais? O potencial é gigante — e o impacto, inevitável.</p>`,
+        imageUrl: 'https://lncimg.lance.com.br/cdn-cgi/image/width=1280,height=720,quality=75,fit=cover,format=webp/uploads/2025/11/neymar-pai-aspect-ratio-512-320.jpg',
+        author: 'Análise 520',
+        publishedAt: generateRecentDate(0, 11, 0),
+        likes: 1800,
+        hashtags: ['#SportBusiness', '#Neymar', '#Pelé', '#MarketingEsportivo'],
+        isFeatured: true,
+    },
+    {
         category: 'ESPECIAIS',
         topic: 'special',
         title: 'Billie Eilish surpreende com o lançamento do álbum “HIT ME HARD AND SOFT” e redefine sua sonoridade',
@@ -91,7 +105,6 @@ export const MOCK_ARTICLES: Article[] = [
         publishedAt: generateRecentDate(0, 10, 0),
         likes: 2100,
         hashtags: ['#BillieEilish', '#Lançamento', '#Música'],
-        isFeatured: true, 
     },
      {
         category: 'ESPECIAIS',
