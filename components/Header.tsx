@@ -12,12 +12,9 @@ const PauseIcon = () => (<svg className="w-full h-full" viewBox="0 0 24 24" fill
 
 const navLinks = [
     { label: 'HOME', category: 'HOME', view: 'HOME' as View },
-    { label: 'FUTEBOL', category: 'FUTEBOL SHOW 520', view: 'CATEGORY' as View },
-    { label: 'AUTOMOBILISMO', category: 'VOLTA RÁPIDA', view: 'CATEGORY' as View },
-    { label: 'SPORTS BUSINESS', category: 'SPORTS BUSINESS 520', view: 'CATEGORY' as View },
-    { label: 'REPÓRTER 520', category: 'REPÓRTER 520', view: 'CATEGORY' as View },
-    { label: 'ESPECIAIS', category: 'ESPECIAIS', view: 'CATEGORY' as View },
-    { label: 'SOBRE NÓS', category: 'SOBRE NÓS', view: 'ABOUT' as View },
+    { label: 'ESPORTES', category: 'ESPORTES', view: 'SPORTS' as View },
+    { label: 'ESPECIAIS', category: 'ESPECIAIS', view: 'SPECIALS' as View },
+    { label: 'RESENHA 520', category: 'RESENHA 520', view: 'CATEGORY' as View },
 ];
 
 interface HeaderProps {
@@ -59,8 +56,9 @@ const Header: React.FC<HeaderProps> = ({ currentView, activeCategory }) => {
   
   const getActiveNavItem = () => {
     if (currentView === 'HOME') return 'HOME';
+    if (currentView === 'SPORTS') return 'ESPORTES';
+    if (currentView === 'SPECIALS') return 'ESPECIAIS';
     if (currentView === 'CATEGORY') return activeCategory;
-    if (currentView === 'ABOUT') return 'SOBRE NÓS';
     return null;
   }
   const activeNavItem = getActiveNavItem();

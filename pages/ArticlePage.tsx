@@ -24,7 +24,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ article }) => {
                 <article className="lg:col-span-8">
                     <header className="mb-6">
                         <p className="text-teal-400 text-sm font-bold uppercase tracking-wider mb-2 font-heading">{article.category}</p>
-                        <h1 className="text-3xl lg:text-5xl font-black text-white mb-4 leading-tight font-heading">{article.title}</h1>
+                        <h1 className="text-3xl lg:text-5xl font-black mb-4 leading-tight font-heading text-gradient">{article.title}</h1>
                         <p className="text-lg text-gray-400">{article.summary}</p>
                         <div className="mt-4 text-sm text-gray-500 flex items-center flex-wrap gap-x-4 gap-y-2">
                             <span>Por <strong>{article.author}</strong></span>
@@ -43,7 +43,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ article }) => {
                          </div>
                     ) : (
                          <figure className="mb-6 rounded-lg overflow-hidden">
-                            <img src={article.imageUrl} alt={article.title} className="w-full h-auto object-cover" />
+                            <img src={article.imageUrl} alt={article.title} className="w-full h-auto object-cover object-center" />
                         </figure>
                     )}
                    

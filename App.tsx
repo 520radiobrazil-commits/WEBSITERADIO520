@@ -11,8 +11,10 @@ import CategoryPage from './pages/CategoryPage';
 import AboutPage from './pages/AboutPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsOfServicePage from './pages/TermsOfServicePage';
+import SportsPage from './pages/SportsPage';
+import SpecialsPage from './pages/SpecialsPage';
 
-export type View = 'HOME' | 'ARTICLE' | 'CATEGORY' | 'ABOUT' | 'PRIVACY' | 'TERMS';
+export type View = 'HOME' | 'ARTICLE' | 'CATEGORY' | 'ABOUT' | 'PRIVACY' | 'TERMS' | 'SPORTS' | 'SPECIALS';
 
 function App() {
   const [articles, setArticles] = useState<Article[]>(MOCK_ARTICLES);
@@ -70,6 +72,10 @@ function App() {
         return <PrivacyPolicyPage />;
       case 'TERMS':
         return <TermsOfServicePage />;
+      case 'SPORTS':
+        return <SportsPage />;
+      case 'SPECIALS':
+        return <SpecialsPage />;
       case 'HOME':
       default:
         return <HomePage />;

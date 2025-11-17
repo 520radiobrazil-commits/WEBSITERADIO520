@@ -87,7 +87,7 @@ const BrasileiraoTable: React.FC<BrasileiraoTableProps> = ({ currentTime }) => {
 
   return (
     <div className="bg-gray-800 rounded-lg p-4">
-      <h3 className="text-white font-bold text-lg mb-4 uppercase tracking-wider">🏆 Brasileirão {currentYear}</h3>
+      <h3 className="text-white font-bold text-lg mb-4 uppercase tracking-wider flex items-center">🏆 Brasileirão {currentYear}</h3>
       <p className="text-sm text-gray-300 mb-4">
         Após o encerramento da rodada, a classificação do Campeonato Brasileiro foi atualizada e segue com Palmeiras e Flamengo dividindo a liderança, enquanto Cruzeiro e Mirassol seguem firmes no G4. Na parte de baixo, Fortaleza, Juventude, Santos e Sport continuam na zona de maior pressão da competição.
       </p>

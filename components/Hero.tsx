@@ -41,7 +41,7 @@ const Hero: React.FC<HeroProps> = ({ article }) => {
           <img
             src={validImageUrl}
             alt={article.title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
             onError={(e) => { e.currentTarget.src = "/placeholder.jpg"; }}
           />
         )}

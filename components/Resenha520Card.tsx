@@ -68,7 +68,7 @@ const Resenha520Card: React.FC = () => {
                 <img
                     src={validImageUrl}
                     alt={title}
-                    className="w-full aspect-video object-cover rounded-lg"
+                    className="w-full aspect-video object-cover object-center rounded-lg"
                     onError={(e) => {
                         e.currentTarget.src = "/placeholder.jpg";
                     }}

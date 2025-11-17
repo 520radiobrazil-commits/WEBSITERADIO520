@@ -40,6 +40,16 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   animation: fadeIn 0.6s ease-out forwards;
 }
 
+/* Utility class for gradient text */
+.text-gradient {
+  background-image: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+
 /* Prose styles for article content */
 .prose-custom {
   font-size: 1.125rem;

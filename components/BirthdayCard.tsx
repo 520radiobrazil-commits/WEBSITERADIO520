@@ -61,7 +61,7 @@ const BirthdayCard: React.FC = () => {
                 <img
                     src={validImageUrl}
                     alt={`Homenagem de aniversário para ${name}`}
-                    className="w-full aspect-video object-cover rounded-lg"
+                    className="w-full aspect-video object-cover object-center rounded-lg"
                     onError={(e) => {
                         e.currentTarget.src = "/placeholder.jpg";
                     }}

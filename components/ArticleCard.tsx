@@ -39,7 +39,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, size = 'normal' }) =
         <img
           src={validImageUrl}
           alt={article.title}
-          className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+          className="w-full h-full object-cover object-center transition-transform duration-500 ease-in-out group-hover:scale-110"
           onError={(e) => { e.currentTarget.src = "/placeholder.jpg"; }}
           loading="lazy"
         />

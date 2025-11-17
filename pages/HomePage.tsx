@@ -5,26 +5,26 @@ import MostLikedArticles from '../components/MostViewed';
 import YouTubePlayer from '../components/YouTubePlayer';
 import WebAppAd from '../components/WebAppAd';
 import AdPlaceholder from '../components/AdPlaceholder';
-import TopHits520 from '../components/FeaturedArticle'; // Reutilizando o componente vazio
+import TopHits520 from '../components/FeaturedArticle';
 import { Article } from '../types';
+import SectionTitle from '../components/SectionTitle';
 
 // Componente interno para renderizar seções de conteúdo (Esportes ou Música)
-const ContentSection: React.FC<{title: string; articles: Article[]; color: 'cyan' | 'orange'}> = ({ title, articles, color }) => {
+const ContentSection: React.FC<{title: string; articles: Article[]}> = ({ title, articles }) => {
     const { handleSelectArticle } = useAppContext();
     if (articles.length === 0) return null;
 
     const featured = articles.find(a => a.isFeatured) || articles[0];
     const others = articles.filter(a => a.slug !== featured.slug).slice(0, 4);
+    
+    const isSport = articles[0]?.topic === 'sport';
+    const hoverShadow = isSport ? 'hover:shadow-cyan-500/20' : 'hover:shadow-orange-500/20';
+    const featuredCategoryColor = isSport ? 'bg-cyan-500 text-gray-900' : 'bg-gradient-to-r from-amber-500 to-orange-600 text-white';
 
-    const borderColor = color === 'cyan' ? 'border-cyan-500' : 'border-orange-500';
-    const hoverShadow = color === 'cyan' ? 'hover:shadow-cyan-500/20' : 'hover:shadow-orange-500/20';
-    const featuredCategoryColor = color === 'cyan' ? 'bg-cyan-500 text-gray-900' : 'bg-gradient-to-r from-amber-500 to-orange-600 text-white';
 
     return (
         <section className="mb-12">
-            <h2 className={`text-3xl font-black text-white mb-6 border-b-4 pb-2 uppercase tracking-wider ${borderColor}`}>
-                {title}
-            </h2>
+            <SectionTitle>{title}</SectionTitle>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Artigo em destaque da seção */}
                  <div 
@@ -36,7 +36,7 @@ const ContentSection: React.FC<{title: string; articles: Article[]; color: 'cyan
                          <img
                           src={featured.imageUrl || "/placeholder.jpg"}
                           alt={featured.title}
-                          className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+                          className="w-full h-full object-cover object-center transition-transform duration-500 ease-in-out group-hover:scale-110"
                           onError={(e) => { e.currentTarget.src = "/placeholder.jpg"; }}
                           loading="lazy"
                         />
@@ -75,12 +75,12 @@ const HomePage: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* Área de Conteúdo Principal */}
                 <div className="lg:col-span-2">
-                    {sportArticles.length > 0 && <ContentSection title="Esportes" articles={sportArticles} color="cyan" />}
-                    {specialArticles.length > 0 && <ContentSection title="ESPECIAIS" articles={specialArticles} color="orange" />}
+                    {sportArticles.length > 0 && <ContentSection title="Esportes" articles={sportArticles} />}
+                    {specialArticles.length > 0 && <ContentSection title="ESPECIAIS" articles={specialArticles} />}
                 </div>
 
                 {/* Barra Lateral */}
-                <aside className="space-y-8 lg:mt-[76px]"> {/* Ajuste de margem para alinhar com o título */}
+                <aside className="space-y-8 lg:mt-[88px]"> {/* Ajuste de margem para alinhar com o título */}
                     <TopHits520 />
                     <MostLikedArticles />
                     <AdPlaceholder slot="1234567890" />
