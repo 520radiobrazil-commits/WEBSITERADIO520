@@ -11,7 +11,7 @@ import SectionTitle from '../components/SectionTitle';
 import AudioPlayer from '../components/AudioPlayer';
 
 // Componente interno para renderizar seções de conteúdo
-const ContentSection: React.FC<{title: string; articles: Article[]; topic: 'sport' | 'special'}> = ({ title, articles, topic }) => {
+const ContentSection: React.FC<{title: string; articles: Article[];}> = ({ title, articles }) => {
     if (articles.length === 0) return null;
 
     const featured = articles.find(a => a.isFeatured) || articles[0];
@@ -19,7 +19,7 @@ const ContentSection: React.FC<{title: string; articles: Article[]; topic: 'spor
     
     return (
         <section className="mb-12">
-            <SectionTitle topic={topic}>{title}</SectionTitle>
+            <SectionTitle>{title}</SectionTitle>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div className="lg:col-span-2">
                   <ArticleCard article={featured} size="large" />
@@ -41,14 +41,20 @@ const HomePage: React.FC = () => {
         <div className="animate-fade-in">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-2 space-y-12">
-                    {sportArticles.length > 0 && <ContentSection title="Esportes" articles={sportArticles} topic="sport" />}
+                    {sportArticles.length > 0 && <ContentSection title="Esportes" articles={sportArticles} />}
                     
-                    {specialArticles.length > 0 && <ContentSection title="Especiais" articles={specialArticles} topic="special" />}
+                    {podcastArticle && (
+                      <section>
+                         <SectionTitle>Podcast 520</SectionTitle>
+                         <AudioPlayer article={podcastArticle} />
+                      </section>
+                    )}
+
+                    {specialArticles.length > 0 && <ContentSection title="Especiais" articles={specialArticles} />}
                 </div>
 
                 <aside className="space-y-8 lg:mt-[88px]">
                     <TopHits520 />
-                    {podcastArticle && <AudioPlayer article={podcastArticle} />}
                     <MostLikedArticles />
                     <AdPlaceholder slot="1234567890" />
                     <YouTubePlayer />

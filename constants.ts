@@ -159,7 +159,7 @@ export const MOCK_ARTICLES: Article[] = [
         hashtags: ['#Instagram', '#Privacidade', '#RedesSociais', '#Tecnologia'],
     },
     {
-        category: 'PODCAST 520',
+        category: 'ESPECIAIS',
         topic: 'special',
         title: 'Podcast 520: Analisando as batidas que vão dominar o verão',
         slug: 'podcast-520-batidas-verao',
