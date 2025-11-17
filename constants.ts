@@ -22,7 +22,6 @@ export const MOCK_ARTICLES: Article[] = [
         publishedAt: generateRecentDate(0, 8, 30),
         likes: 1650,
         hashtags: ['#EsquiAlpino', '#LucasPinheiro', '#TimeBrasil'],
-        isFeatured: true, // Artigo em destaque na seção de esportes
     },
     {
         category: 'FUTEBOL SHOW 520',
@@ -37,6 +36,20 @@ export const MOCK_ARTICLES: Article[] = [
         publishedAt: generateRecentDate(2, 15, 0),
         likes: 1100,
         hashtags: ['#SeleçãoBrasileira', '#Futebol', '#Amistoso'],
+    },
+    {
+        category: 'REPÓRTER 520',
+        topic: 'sport',
+        title: 'Gabriel Magalhães é cortado do amistoso da Seleção Brasileira',
+        slug: 'gabriel-magalhaes-cortado-amistoso-selecao',
+        summary: 'O zagueiro Gabriel Magalhães, do Arsenal, foi cortado do amistoso da Seleção Brasileira contra a Tunísia em Londres após sentir uma lesão na coxa. Carlo Ancelotti optou por não convocar um substituto.',
+        content: `<p>O clima em Londres deu aquela azedada pra Seleção Brasileira. O zagueiro Gabriel Magalhães, do Arsenal, sentiu a coxa direita e tá oficialmente fora do amistoso contra a Tunísia. O defensor deixou a preparação e já retorna ao clube inglês pra continuar o tratamento.</p><p>A lesão tirou Gabriel da lista às vésperas do jogo, e Carlo Ancelotti decidiu não chamar ninguém pro lugar dele — vai com o que tem mesmo. A comissão técnica entende que o grupo atual segura bem a bronca pro compromisso da Data Fifa.</p><p>O corte do defensor é um baque, já que Gabriel vinha de boa fase no Arsenal e tinha moral na Seleção. Agora, o foco do jogador é se recuperar o quanto antes pra voltar ao ritmo na Premier League.</p><p>A cobertura completa da Seleção em Londres você acompanha aqui, no Repórter 520, na Rádio 520.</p>`,
+        imageUrl: 'https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2025/11/gabriel-magalhaes-lesionado-brasil-senegal-e1763312078525.jpg?w=1200&h=630&crop=1',
+        author: 'Repórter 520',
+        publishedAt: generateRecentDate(1, 10, 15),
+        likes: 980,
+        hashtags: ['#SeleçãoBrasileira', '#GabrielMagalhães', '#Lesão'],
+        isFeatured: true, // Artigo em destaque na seção de esportes
     },
      {
         category: 'VOLTA RÁPIDA',

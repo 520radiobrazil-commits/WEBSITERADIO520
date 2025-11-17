@@ -14,6 +14,7 @@ const navLinks = [
     { label: 'HOME', category: 'HOME', view: 'HOME' as View },
     { label: 'FUTEBOL', category: 'FUTEBOL SHOW 520', view: 'CATEGORY' as View },
     { label: 'AUTOMOBILISMO', category: 'VOLTA RÁPIDA', view: 'CATEGORY' as View },
+    { label: 'REPÓRTER 520', category: 'REPÓRTER 520', view: 'CATEGORY' as View },
     { label: 'ESPECIAIS', category: 'ESPECIAIS', view: 'CATEGORY' as View },
     { label: 'SOBRE NÓS', category: 'SOBRE NÓS', view: 'ABOUT' as View },
 ];
