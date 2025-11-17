@@ -25,8 +25,10 @@ interface ShareButtonsProps {
 const ShareButtons: React.FC<ShareButtonsProps> = ({ article }) => {
   const [copyStatus, setCopyStatus] = useState('Copiar Link');
   
-  // FIX: Use the specific article URL for sharing, not the homepage URL.
-  const urlToShare = `https://radio520.com.br/noticia/${article.slug}`;
+  // FIX: This URL was pointing to a non-existent path on a production domain.
+  // Changed to generate a shareable link for the current application using URL parameters.
+  // This allows the app to open directly on the shared article.
+  const urlToShare = `${window.location.origin}${window.location.pathname}?article=${article.slug}`;
 
   const encodedUrl = encodeURIComponent(urlToShare);
   const encodedTitle = encodeURIComponent(article.title);

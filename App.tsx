@@ -25,6 +25,15 @@ function App() {
   const radioPlayer = useRadioPlayer('https://servidor40.brlogic.com:7054/live');
 
   useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const articleSlug = params.get('article');
+    if (articleSlug && articles.some(a => a.slug === articleSlug)) {
+        setSelectedArticleSlug(articleSlug);
+        setView('ARTICLE');
+    }
+  }, [articles]);
+
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, [view, selectedArticleSlug, selectedCategory]);
   
