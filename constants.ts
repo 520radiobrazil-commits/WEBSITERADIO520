@@ -2,7 +2,7 @@ import { Article } from './types';
 
 // Helper para criar datas recentes dinamicamente
 const generateRecentDate = (daysAgo: number, hour: number, minute: number): string => {
-  const date = new Date('2025-11-15T12:00:00Z');
+  const date = new Date();
   date.setDate(date.getDate() - daysAgo);
   date.setHours(hour, minute, Math.floor(Math.random() * 60));
   return date.toISOString();
