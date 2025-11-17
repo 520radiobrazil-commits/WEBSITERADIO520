@@ -1,0 +1,70 @@
+:root {
+  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Anton', sans-serif;
+  --brand-gradient: linear-gradient(to right, #2dd4bf, #38bdf8); /* teal to sky blue */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--font-sans);
+  background-color: #0c131d; /* Darker blue-ish gray */
+  color: #d1d5db; /* Gray 300 */
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
+}
+
+/* Custom scrollbar for a more modern look */
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #111827;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--brand-gradient);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to right, #34d399, #60a5fa);
+}
+
+/* Animation for view transitions */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Prose styles for article content */
+.prose-custom {
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+.prose-custom h1, .prose-custom h2, .prose-custom h3 {
+  color: white;
+  font-family: var(--font-heading);
+}
+.prose-custom p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+.prose-custom a {
+  color: #2dd4bf; /* Teal 400 */
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.prose-custom a:hover {
+  color: #38bdf8; /* Sky 500 */
+}
+.prose-custom ul > li::marker {
+  color: #2dd4bf; /* Teal 400 */
+}
+.prose-custom blockquote {
+  border-left-color: #2dd4bf;
+  color: #9ca3af; /* Gray 400 */
+}
